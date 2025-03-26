@@ -2,8 +2,6 @@ package com.example.bank.Repository;
 
 import com.example.bank.Model.Account;
 import com.example.bank.Model.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
