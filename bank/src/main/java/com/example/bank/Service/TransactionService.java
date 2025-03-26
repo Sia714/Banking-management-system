@@ -31,6 +31,7 @@ public class TransactionService {
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
     }
+
     public Transaction getTransactionById(Long id) {
         return transactionRepository.findById(id).orElse(null);
     }
@@ -128,13 +129,6 @@ public class TransactionService {
 
         return "Transfer successful!";
     }
-
-
-
-
-
-
-
 
 
 }

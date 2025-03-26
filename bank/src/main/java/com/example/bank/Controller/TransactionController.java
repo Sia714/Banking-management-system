@@ -7,7 +7,6 @@ import com.example.bank.Service.AccountService;
 import com.example.bank.Service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -33,16 +32,6 @@ public class TransactionController {
         return transactionService.transfer(fromAccountId, toAccountId, amount);
     }
 
-    @GetMapping("/user/{userId}/accounts")
-    public List<Account> getUserAccounts(@PathVariable Long userId) {
-        User user = new User();
-        user.setId(userId);
-        return accountService.searchByUser(user);
-    }
-    @PostMapping("/save")
-    public Transaction saveTransaction(@RequestBody Transaction transaction) {
-        return transactionService.saveTransaction(transaction);
-    }
 
     @GetMapping("/{id}")
     public Transaction getTransactionById(@PathVariable Long id) {

@@ -24,6 +24,12 @@ public class AccountController {
         return accountService.searchById(id);
     }
 
+    @GetMapping("/user/{userId}")
+    public List<Account> getUserAccounts(@PathVariable Long userId) {
+        User user = new User();
+        user.setId(userId);
+        return accountService.searchByUser(user);
+    }
     @GetMapping
     public List<Account> getAllAccounts() {
         return accountService.getAllAccounts();
@@ -44,10 +50,5 @@ public class AccountController {
         return accountService.updateAccount(id, account);
     }
 
-    @GetMapping("/user/{userId}")
-    public List<Account> getAccountsByUser(@PathVariable Long userId) {
-        User user = new User();
-        user.setId(userId);
-        return accountService.searchByUser(user);
-    }
+
 }
